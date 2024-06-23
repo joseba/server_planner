@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="left-section">
+        <div class="task-list-container">
+            <ul class="task-list" id="taskList">
+            </ul>
+        </div>
+        <div class="task-form">
+            <input type="text" id="description" placeholder="descripcion">
+            <input type="number" id="time" placeholder="Tiempo en minutos">
+            <button onclick="addTask()">Añadir tarea</button>
+            <button onclick="exportTasks()">Exportar tareas</button>
+            <button onclick="importTasks()">Importar tareas</button>
+        </div>
+    </div>
+    <div class="right-section">
+        <div class="section">
+            <div class="section-title">Resumen</div>
+            <div id="summary" class="summary-content">
+                <div class="summary-row">
+                    <span id="total-hours">0</span><small>horas</small>
+                    <span id="total-days">0</span><small>jornadas</small>
+                </div>
+                <div class="summary-row">
+                    <span id="servers-per-day">0</span><small>servidores/jornada</small>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Calendario</div>
+            <div class="calendar-container">
+                <div class="month-calendar" id="leftCalendar">
+                    <h3 class="month-name"></h3>
+                    <table class="calendar-table"></table>
+                </div>
+                <div class="month-calendar" id="rightCalendar">
+                    <h3 class="month-name"></h3>
+                    <table class="calendar-table"></table>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Ajustes</div>
+            <div class="settings-control">
+                <label for="servers">Servidores:</label>
+                <input type="number" id="servers" min="1" value="1">
+            </div>
+            <div class="settings-control">
+                <label for="start-date">Fecha de inicio:</label>
+                <input type="date" id="start-date">
+            </div>            
+            <div class="settings-control">
+                <label for="simultaneous-execution">Ejecuciones simultáneas:</label>
+                <input type="range" id="simultaneous-execution" min="1" max="10" value="1" step="1">
+                <span id="simultaneous-execution-value">1</span>
+            </div>
+            <div class="settings-control">
+                <label for="start-time">Hora inicio ventana:</label>
+                <input type="number" id="start-time" min="0" max="23" value="1">
+            </div>
+            <div class="settings-control">
+                <label for="end-time">Hora fin ventana:</label>
+                <input type="number" id="end-time" min="0" max="23" value="6">
+            </div>    
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
